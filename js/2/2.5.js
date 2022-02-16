@@ -1,4 +1,4 @@
-const readlineSync = requiere('readline-sync');
+const readlineSync = require('readline-sync');
 
 let numberFavorite = readlineSync.question("Entee favorite number -  ");
 
