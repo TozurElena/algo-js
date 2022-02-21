@@ -6,15 +6,17 @@ class Rectangle {
     this.length = length;
   }
   collides (otherRectangle) {
-    if (this.topLeftXPos <= otherRectangle.topLeftXPos + otherRectangle.width && 
-      this.topLeftYPos <= otherRectangle.topLeftYPos + otherRectangle.length)
-      return true;
-      else return false;
+    if (otherRectangle.topLeftXPos + otherRectangle.width < this.topLeftXPos || otherRectangle.topLeftXPos > this.topLeftXPos + this.width)
+      return false;
+        else if (otherRectangle.topLeftYPos + otherRectangle.length < this.topLeftYPos || otherRectangle.topLeftYPos > this.topLeftYPos + this.length)
+          return false;
+            else return true;
+  
   }
 }
 
-let firstRectangle = new Rectangle(5, 5, 6, 10);
-let secondRectangle = new Rectangle(2, 2, 3, 2);
+let firstRectangle = new Rectangle(2, 9, 5, 14);
+let secondRectangle = new Rectangle(4, 12, 12, 8);
 
 console.log(firstRectangle.collides(secondRectangle))
 
