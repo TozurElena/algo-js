@@ -15,3 +15,5 @@ const fib = (number) => {
 }
 
 fib(number);
+
+// Make a program that asks for an integer n and generates the n first Fibonacci numbers.
