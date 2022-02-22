@@ -10,7 +10,8 @@ let numberIdeal = random(); let numberUser;
 do {
   numberUser = readlineSync.question("number = ");
   if (numberUser == numberIdeal) console.log('Well guessed!');
-    else console.log('Too high');
+    else if (numberUser > numberIdeal) console.log('Too high');
+      else console.log('Too low');
 }
 while (numberIdeal != numberUser);
 
